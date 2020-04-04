@@ -9,20 +9,27 @@ const SingleImage = () => {
   const history = useHistory();
 
   const [photo, setPhoto] = useState();
+  const [error, setError] = useState();
 
   useEffect(() => {
     axios
       .get(`https://jsonplaceholder.typicode.com/photos?id=${id}`)
       .then((response) => {
         setPhoto(response.data[0]);
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(true);
+        setTimeout(() => {
+          history.push("/");
+        }, 3000);
       });
   }, [id]);
 
   const handleXClick = () => {
+    setError(false);
     history.push("/");
   };
-
-  console.log(id);
 
   return photo ? (
     <>
@@ -37,6 +44,12 @@ const SingleImage = () => {
           alt=""
           src={photo.url}
         ></img>
+      </div>
+    </>
+  ) : error ? (
+    <>
+      <div className="ErrorBox">
+        <p>Hmm... Something went wrong...</p>
       </div>
     </>
   ) : (

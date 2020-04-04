@@ -2,6 +2,12 @@ body {
   background-color: rgb(224, 224, 224);
 }
 
+.ErrorBox {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
 .PhotoGrid {
   display: grid;
   grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
@@ -35,7 +41,7 @@ body {
 
 .BackButton {
   margin: 10px;
-  position: absolute;
+  position: fixed;
 }
 
 @media screen and (max-width: 800px) {
