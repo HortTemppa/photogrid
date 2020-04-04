@@ -19,18 +19,25 @@ body {
   overflow: hidden;
   max-width: 100%;
   max-height: 100%;
+  margin: 5px;
+}
+
+.PhotoContainer:hover {
+  border: black 3px solid;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .GridItem {
-  margin: 5px;
   max-width: 100%;
+  margin: -4px;
 }
 
-.GridItem:hover {
-  margin: 3px;
-  border: black 2px solid;
+/*.GridItem:hover {
+  margin: 4px;
+  border: black 3px solid;
   cursor: pointer;
-}
+}*/
 
 .SinglePhotoContainer {
   text-align: center;
