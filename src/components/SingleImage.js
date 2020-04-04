@@ -24,7 +24,7 @@ const SingleImage = () => {
           history.push("/");
         }, 3000);
       });
-  }, [id]);
+  }, [id, history]);
 
   const handleXClick = () => {
     setError(false);

@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Loader from "react-loader-spinner";
 
 const Loading = () => {
   const [loading, setLoading] = useState(false);
 
-  setTimeout(() => {
-    setLoading(true);
-  }, 300);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(true);
+    }, 300);
+  }, []);
 
   return loading ? (
     <div className="SinglePhotoContainer">

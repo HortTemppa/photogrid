@@ -29,11 +29,10 @@ const Photogrid = () => {
     <div className="PhotoGrid">
       {photos.map((photo) => {
         return (
-          <div className="PhotoContainer">
+          <div key={photo.id} className="PhotoContainer">
             <img
               className="GridItem"
               alt=" "
-              key={photo.id}
               src={photo.thumbnailUrl}
               onClick={handleImageClick(photo.id)}
             ></img>
