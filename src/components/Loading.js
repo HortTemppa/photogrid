@@ -5,9 +5,14 @@ const Loading = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
+      console.log("timeout");
       setLoading(true);
     }, 300);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   return loading ? (
